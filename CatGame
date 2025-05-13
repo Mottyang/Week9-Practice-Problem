@@ -20,17 +20,17 @@ public class CatGame {
         int max = -Integer.MAX_VALUE, min = Integer.MAX_VALUE;
         for(int i = 0; i < coordinates.length; i++){
             max = Math.max(max, coordinates[i]);
-            min = Math.min(max, coordinates[i]);
+            min = Math.min(min, coordinates[i]);
         }
         int abs = max - min;
         
         return abs;
     }
 
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         int[] coordinates = {-3, 0, 1};
         int X = 3;
         int result = getNumber(coordinates, X);
-        
-    }*/ 
+        System.out.println(result);
+    }
 }
