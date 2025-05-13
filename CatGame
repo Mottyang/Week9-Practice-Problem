@@ -1,0 +1,36 @@
+public class CatGame {
+    public static int getNumber(int[] coordinates, int X){
+
+        if(coordinates.length == 0){return 0;}
+        int sum = 0;
+
+        for(int i = 0; i < coordinates.length; i++){
+            sum += coordinates[i];
+        }
+        double avg = sum * 1.0 / coordinates.length;
+
+        for(int i = 0; i < coordinates.length; i++){
+            if(coordinates[i] <= avg){
+                coordinates[i] += X;
+            }
+            else if(coordinates[i] > avg){
+                coordinates[i] -= X;
+            }
+        }
+        int max = -Integer.MAX_VALUE, min = Integer.MAX_VALUE;
+        for(int i = 0; i < coordinates.length; i++){
+            max = Math.max(max, coordinates[i]);
+            min = Math.min(max, coordinates[i]);
+        }
+        int abs = max - min;
+        
+        return abs;
+    }
+
+   /* public static void main(String[] args) {
+        int[] coordinates = {-3, 0, 1};
+        int X = 3;
+        int result = getNumber(coordinates, X);
+        
+    }*/ 
+}
